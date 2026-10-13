@@ -1,8 +1,16 @@
-console.log("mensagem");
 document.addEventListener("DOMContentLoaded",() => {
     const menuResponsivo = document.getElementById("menuResponsivo");
     const navMenu = document.getElementById("nav-menu");
     menuResponsivo.addEventListener("click",() =>{
         navMenu.classList.toggle("active")
     ;})
-}); // Fechamento do evento carregar página html
+
+    const navLinks = document.querySelectorAll(".nav-menu a");
+    navLinks.forEach((Link)=>{
+        Link.addEventListener("click", ()=>{
+            navMenu.classList.remove("active");
+          })
+        })
+    }); // Fechamento do evento carregar página html
+
+    
