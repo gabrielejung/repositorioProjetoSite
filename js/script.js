@@ -30,6 +30,33 @@ document.addEventListener("DOMContentLoaded",() => {
                 dots[slideAtual].classList.add("active");
         }
 
-    }); // Fechamento do evento carregar página html
+        function nextSlide() {
+            showSlide(slideAtual + 1);
+        }
 
-    
+        function prevSlide() {
+            showSlide(slideAtual - 1);
+        }
+
+        function startSlide() {
+            slideIntervalo = setInterval(nextSlide, 5000);
+        }
+        
+        function stopSlide() {
+            clearInterval(slideIntervalo);
+        }
+
+        nextBtn.addEventListener("click", () => {
+            nextSlide();
+            stopSlide();
+            startSlide();
+        });
+
+        prevBtn.addEventListener("click", () => {
+            prevSlide();
+            stopSlide();
+            startSlide();
+        });
+
+
+    }); // Fechamento do evento carregar página html
